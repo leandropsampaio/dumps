@@ -2,5 +2,5 @@
 
 ## Autor
 ```
-Leandro Pereira Sampaio
+- Leandro Pereira Sampaio
 ```
