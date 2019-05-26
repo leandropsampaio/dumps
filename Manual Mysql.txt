@@ -1,0 +1,149 @@
+/* _______________________________________________________________ */
+/*|************************* Manual Mysql ************************|*/
+/*|_______________________________________________________________|*/
+/*__________________________________________________________________*/
+/*__________________________| Importante |__________________________*/
+/*__________________________________________________________________*/
+SET FOREIGN_KEY_CHECKS=0; -> Desativa as restrições das chaves estrangeiras
+
+SET FOREIGN_KEY_CHECKS=1; -> Ativa as restrições das chaves estrangeiras
+
+/*__________________________________________________________________*/
+/*____________________________| Create |____________________________*/
+/*__________________________________________________________________*/
+create database "nomeDoBanco"; -> cria um banco de dados.
+
+create table "nomeDaTabela" (
+	"nomeDaColuna" "tipoDaColuna",
+	...
+) default charset = utf8mb4; -> cria uma tabela.
+
+/*__________________________________________________________________*/
+/*____________________________| Use |____________________________*/
+/*__________________________________________________________________*/
+use "nomeDoBanco"; -> Utiliza o banco de dados.
+
+/*__________________________________________________________________*/
+/*____________________________| Describe |____________________________*/
+/*__________________________________________________________________*/
+describe "nomeDaTabela"; -> Descreve a tabela.
+
+/*__________________________________________________________________*/
+/*____________________________| Truncate |____________________________*/
+/*__________________________________________________________________*/
+truncate table "nomeDaTabela"; -> Apaga todos os registros da tabela.
+
+/*__________________________________________________________________*/
+/*____________________________| Delete |____________________________*/
+/*__________________________________________________________________*/
+DELETE FROM "nomeDaTabela" where "nomeDaColuna" = "algumValor";
+-> Deleta um dado da tabela.
+
+/*__________________________________________________________________*/
+/*____________________________| Drop |____________________________*/
+/*__________________________________________________________________*/
+drop database "nomeDoBanco"; -> Exclui o banco de dados.
+
+drop table "nomeDaTabela"; -> Exclui a tabela de acordo com o nome da tabela.
+
+/*__________________________________________________________________*/
+/*____________________________| Show |____________________________*/
+/*__________________________________________________________________*/
+show databases; -> Mostra todos os bancos criados.
+
+show tables; -> Mostra todos as tabelas de uma banco,
+				anteriormente selecionado.
+
+/*__________________________________________________________________*/
+/*____________________________| Update |____________________________*/
+/*__________________________________________________________________*/
+update "nomeDaTabela" set "nomeDaColuna"='algumValor' where "nomeDaColuna" = 'algumValor';
+-> Atualiza algum dado da tabela.
+
+/*__________________________________________________________________*/
+/*__________________________| Alter table |__________________________*/
+/*__________________________________________________________________*/
+alter table "nomeDaTabela" add column "nomeDaColuna" "tipoDaColuna";
+-> Adiciona uma coluna na tabela.
+
+alter table "nomeDaTabela" drop column "nomeDaColuna";
+-> Excluir uma coluna da tabela.
+
+alter table "nomeDaTabela" change column "nomeDaColuna" "novoTipoDaColuna" "novoTipoDaColuna";
+-> Muda o nome e tipo da coluna.
+
+alter table "nomeDaTabela" modify "nomeDaColuna" "novoTipoDaColuna";
+-> Modifica o tipo da coluna.
+
+/*__________________________________________________________________*/
+/*____________________________| Rename |____________________________*/
+/*__________________________________________________________________*/
+rename table "nomeDaTabela" to "novoNomeDaTabela";
+
+/*__________________________________________________________________*/
+/*____________________________| Select |____________________________*/
+/*__________________________________________________________________*/
+select * from "nomeDaTabela"; -> Seleciona e mostra todas as colunas e linhas.
+
+select distinct "nomeDaColuna" from "nomeDaTabela"; 
+-> Seleciona e mostra a coluna escolhida e as linhas distintas (dados que não se repetem).
+
+select count(*) from "nomeDaTabela"; -> Contar a quantidade de linhas na tabela.
+
+select "nomeDaColuna" from "nomeDaTabela"; 
+-> Seleciona e mostra todas as linhas de uma determinada coluna.
+
+select * from "nomeDaTabela" order by "nomeDaColuna" desc; 
+-> Seleciona e mostra todas as linhas em ordem decrescente.
+
+select * from "nomeDaTabela" order by "nomeDaColuna"; 
+-> Seleciona e mostra todas as linhas em ordem crescente.
+
+select * from "nomeDaTabela" where "nomeDaColuna" = "algumValor" order by "nomeDaColuna";
+-> Seleciona e mostra todas as linhas e colunas onde a coluna for algum valor e ordena.
+
+select * from "nomeDaTabela" where "nomeDaColuna" between "algumValor" and "algumValor"
+-> Seleciona e mostra todas as linhas e colunas onde a coluna escolhida está entre estes outros dois valores.
+
+select * from "nomeDaTabela" where "nomeDaColuna" like 'a%';
+-> Seleciona e mostra todas as linhas e colunas onde a coluna escolhida começa com a letra "a".
+
+select * from "nomeDaTabela" where "nomeDaColuna" like '%a';
+-> Seleciona e mostra todas as linhas e colunas onde a coluna escolhida termina com a letra "a".
+
+select * from "nomeDaTabela" where "nomeDaColuna" like '%a%';
+-> Seleciona e mostra todas as linhas e colunas onde a coluna escolhida tem "a" no meio.
+
+select * from "nomeDaTabela" where "nomeDaColuna" not like '%a%';
+-> Seleciona e mostra todas as linhas e colunas onde a coluna escolhida não possui letra "a".
+
+select max("nomeDaColuna") from "nomeDaTabela";
+-> Mostra o máximo valor da coluna informada.
+
+select min("nomeDaColuna") from "nomeDaTabela";
+-> Mostra o mínimo valor da coluna informada.
+
+select sum("nomeDaColuna") from cursos;
+-> Mostra a soma dos valores da coluna selecionada.
+
+select avg("nomeDaColuna") from cursos;
+-> Mostra a média dos valores da coluna selecionada.
+
+select "nomeDaColuna", count(*) from "nomeDaTabela" group by "nomeDaColuna" order by "nomeDaColuna";
+-> Mostra os dados em grupos escolhidos pela coluna e ordenados por outra coluna.
+
+/*__________________________________________________________________*/
+/*_________________| Chave primária e estrangeira |_________________*/
+/*__________________________________________________________________*/
+
+
+
+
+
+
+
+
+
+
+
+
