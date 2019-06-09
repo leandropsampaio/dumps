@@ -123,10 +123,10 @@ select max("nomeDaColuna") from "nomeDaTabela";
 select min("nomeDaColuna") from "nomeDaTabela";
 -> Mostra o mínimo valor da coluna informada.
 
-select sum("nomeDaColuna") from cursos;
+select sum("nomeDaColuna") from "nomeDaTabela";
 -> Mostra a soma dos valores da coluna selecionada.
 
-select avg("nomeDaColuna") from cursos;
+select avg("nomeDaColuna") from "nomeDaTabela";
 -> Mostra a média dos valores da coluna selecionada.
 
 select "nomeDaColuna", count(*) from "nomeDaTabela" group by "nomeDaColuna" order by "nomeDaColuna";
@@ -137,13 +137,73 @@ select "nomeDaColuna", count(*) from "nomeDaTabela" group by "nomeDaColuna" orde
 /*__________________________________________________________________*/
 
 
+/*__________________________________________________________________*/
+/*___________________| CONCAT, IFNULL e COALESCE |___________________*/
+/*__________________________________________________________________*/
+concat(string | nomeColuna e uma string | nomeColuna) -> Concatena os textos com as colunas.
+
+ifnull (valor|coluna, valordeSubstituição) 
+-> Substitui o valor ou coluna por outro valor caso ele seja nulo.
+
+/*__________________________________________________________________*/
+/*____________________| Operadores matemáticos |____________________*/
+/*__________________________________________________________________*/
+select numero *|+|-|/ numero as resultado from "nomeDaTabela";
+
+/*__________________________________________________________________*/
+/*______________________| Funções aritméticas |_____________________*/
+/*__________________________________________________________________*/
 
 
+/*__________________________________________________________________*/
+/*____________________________| Funções |___________________________*/
+/*__________________________________________________________________*/
+create function "nomeFuncao" ("parâmetros") returns "tipoDado" return "valorRetornado";
+-> Criando a função.
 
+select "nomeFuncao" ("parâmetros"); 
+-> Chamando a função.
 
+drop function "nomeFuncao";
+-> Excluindo a função.
 
+/*__________________________________________________________________*/
+/*_________________________| Procedimentos |________________________*/
+/*__________________________________________________________________*/
+create procedure "nomeProcedimento" ("parâmetros") "declaracoes";
+-> Criando um procedimento.
 
+call "nomeProcedimento" ("parâmetros");
+-> Chamando o procedimento.
 
+drop procedure "nomeProcedimento";
+-> Excluindo o procedimento.
 
+/*__________________________________________________________________*/
+/*__________________________| Delimitador |_________________________*/
+/*__________________________________________________________________*/
+delimiter $$ -> Pode ser escolhido qualquer delimitador.
+create function "nomeProcedimento" ("parâmetros") "declaracoes";
+begin
+	return "valor";
+end
+delimiter ; -> Voltar ao delimitador padrão.
+
+delimiter //
+create procedure "nomeProcedimento" ("parâmetros")
+begin
+	"declaracoes";
+	"declaracoes";
+end
+delimiter ;
+
+/*__________________________________________________________________*/
+/*___________________________| Variáveis |__________________________*/
+/*__________________________________________________________________*/
+declare "nomeDaVariavel" "tipoDaVariavel";
+-> Declara uma variável.
+
+set "nomeDaVariavel" = "valor";
+-> Altera o valor da variável.
 
 
